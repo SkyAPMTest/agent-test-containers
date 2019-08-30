@@ -105,8 +105,9 @@
 # -----------------------------------------------------------------------------
 
 export AGENT_FILE_PATH=/usr/local/skywalking-agent-scenario/agent
+echo "${AGENT_FILE_PATH}/skywalking-agent.jar"
 if [ -f "${AGENT_FILE_PATH}/skywalking-agent.jar" ]; then
-    CATALINA_OPTS="$CATALINA_OPTS -javaagent:${AGENT_FILE_PATH}/skywalking-agent.jar -Dskywalking.collector.grpc_channel_check_interval=2 -Dskywalking.collector.app_and_service_register_check_interval=2 -Dskywalking.collector.discovery_check_interval=2 -Dskywalking.collector.backend_service=localhost:12800 -Dskywalking.agent.service_name=${SCENARIO_NAME}  -Xms256m -Xmx256m -XX:PermSize=64M -XX:MaxPermSize=64"
+    CATALINA_OPTS="$CATALINA_OPTS -javaagent:${AGENT_FILE_PATH}/skywalking-agent.jar -Dskywalking.collector.grpc_channel_check_interval=2 -Dskywalking.collector.app_and_service_register_check_interval=2 -Dskywalking.collector.discovery_check_interval=2 -Dskywalking.collector.backend_service=localhost:19876 -Dskywalking.agent.service_name=${SCENARIO_NAME}  -Xms256m -Xmx256m -XX:PermSize=64M -XX:MaxPermSize=64"
 fi
 
 # OS specific support.  $var _must_ be set to either true or false.
